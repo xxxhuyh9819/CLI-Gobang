@@ -1,6 +1,6 @@
 import unittest
 
-from src.model.game import Game, Side
+from ..src.model.game import Game, Side
 
 
 class TestGame(unittest.TestCase):
