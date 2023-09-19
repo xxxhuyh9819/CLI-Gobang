@@ -1,7 +1,7 @@
 from enum import Enum
 import copy
 
-size = 6
+size = 15
 
 
 class Side(Enum):
