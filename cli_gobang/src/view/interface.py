@@ -64,5 +64,5 @@ class Panel(object):
     A function that prints the words when exiting the game
     """
     def goodbyePrompt(self):
-        print("Thank you for playing!")
+        print("Thank you for playing. See you next time!")
 
