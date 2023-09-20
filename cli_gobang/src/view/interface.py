@@ -1,24 +1,26 @@
 class Panel(object):
 
+    def __renderRowNumber(self, board):
+        print('    ', end='')
+        for i in range(len(board)):
+            if i < 10:
+                print(f"{i}", end='   ')
+            else:
+                print(f"{i}", end='  ')
+        print()
+
     def render(self, board):
-        print(end=" ")
-        for i in range(len(board) + 1):
-            for j in range(len(board[0]) + 1):
-                if i == 0 and j != len(board[0]):
-                    if j < 10:
-                        print("   " + f"{j}", end='')
-                    else:
-                        print("  " + f"{j}", end='')
-                    continue
-                if j == 0 and i > 0:
-                    if i <= 10:
-                        print(f"{i - 1}", end='  ')
-                    else:
-                        print(f"{i - 1}", end=' ')
-                if j == len(board[0]):
-                    continue
-                print(" " + str(board[i - 1][j - 1]), end='  ')
+        self.__renderRowNumber(board)
+        for i in range(len(board)):
+            if i < 10:
+                print(i, end='  ')
+            else:
+                print(i, end=' ')
+            for j in range(len(board[0])):
+                print(" " + str(board[i][j]), end='  ')
+            print(f" {i}")
             print()
+        self.__renderRowNumber(board)
 
     def startPrompt(self):
         print("----------------------")
