@@ -8,6 +8,11 @@ action = PlayAction(g, panel)
 
 action.receiveStartAndEndInput()
 
+"""
+A function that runs the game
+Gets recursively called if the players continues to play after one game ends
+"""
+
 
 def run():
     while g.getWinner() == Side.NONE:
@@ -20,4 +25,3 @@ def run():
 
 if __name__ == "__main__":
     run()
-

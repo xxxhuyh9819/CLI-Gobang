@@ -14,6 +14,9 @@ class PlayAction(object):
     def getPanel(self):
         return self.__panel
 
+    """
+    A function that receives input from console to decide starting a new game or exiting the game
+    """
     def receiveStartAndEndInput(self):
         self.__panel.startPrompt()
         option = input()
@@ -24,6 +27,10 @@ class PlayAction(object):
             self.__game.init()
             self.__panel.render(self.__game.getBoard())
 
+    """
+    A function that receives input of a new position from console
+    checks the input's validity to ensure that the input is an integer within the bound of the board 
+    """
     def receivePosInput(self, coordinate):
         self.__panel.movePrompt(self.__game.getCurrSide().name, coordinate)
         pos = input()
@@ -33,6 +40,10 @@ class PlayAction(object):
             pos = input()
         return int(pos)
 
+    """
+    A function that places the chess on the board
+    Makes the model to change the board and the view to refresh
+    """
     def place(self):
         row = self.receivePosInput("row")
         col = self.receivePosInput("column")
@@ -43,6 +54,11 @@ class PlayAction(object):
         self.__game.updateBoard(row, col)
         self.__panel.render(self.__game.getBoard())
 
+    """
+    A function that ends the game after a winner arises
+    Accepts the input for whether staring a new game or exiting the game
+    Checks the input's validity
+    """
     def endGame(self):
         self.__panel.endPrompt(self.__game.getWinner().name)
         self.__game.clear()
