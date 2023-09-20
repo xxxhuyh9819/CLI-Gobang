@@ -11,9 +11,6 @@ action.receiveStartAndEndInput()
 
 def run():
     while g.getWinner() == Side.NONE:
-        # panel.render(g.getBoard())
-        # action.receivePosInput("row")
-        # action.receivePosInput("column")
         action.place()
     if action.endGame() == 1:
         run()
