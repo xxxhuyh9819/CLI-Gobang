@@ -18,9 +18,9 @@ class Side(Enum):
 The Game class that holds the components for the game
 '''
 class Game:
-    '''
+    """
     The __init__() function that sets up an empty game
-    '''
+    """
     def __init__(self, the_size=size, board=None, side=Side.BLACK, winner=Side.NONE):
         self.__board = board
         self.__size = the_size
@@ -117,9 +117,6 @@ class Game:
                 self.switchSide()
         else:
             pass
-        # return self.getGameState(self.getSize(), self.getBoard(), self.getCurrSide(), self.getWinner())
-
-        # give a signal to view
 
     '''
     Declaring the winner by returning the corresponding side
