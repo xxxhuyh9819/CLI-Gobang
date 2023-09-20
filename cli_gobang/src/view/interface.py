@@ -2,7 +2,7 @@ class Panel(object):
     """
     A private helper function that prints the column number of the board
     """
-    def __renderRowNumber(self, board):
+    def __renderColNumber(self, board):
         print('    ', end='')
         for i in range(len(board)):
             if i < 10:
@@ -16,7 +16,7 @@ class Panel(object):
     Gets called after every change on the board is made
     """
     def render(self, board):
-        self.__renderRowNumber(board)
+        self.__renderColNumber(board)
         for i in range(len(board)):
             if i < 10:
                 print(i, end='  ')
@@ -26,7 +26,7 @@ class Panel(object):
                 print(" " + str(board[i][j]), end='  ')
             print(f" {i}")
             print()
-        self.__renderRowNumber(board)
+        self.__renderColNumber(board)
 
     """
     A function that prints the welcome interface once starts the application
