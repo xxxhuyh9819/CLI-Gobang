@@ -65,6 +65,7 @@ class PlayAction(object):
         option = input()
         while option != "1" and option != "2":
             self.__panel.invalidInputPrompt([1, 2])
+            option = input()
         if option == "1":
             self.__game.init()
             self.__panel.render(self.__game.getBoard())
