@@ -25,7 +25,6 @@ class Panel(object):
             for j in range(len(board[0])):
                 print(" " + str(board[i][j]), end='  ')
             print(f" {i}")
-            print()
         self.__renderColNumber(board)
 
     """
